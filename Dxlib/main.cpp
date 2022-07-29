@@ -1,25 +1,15 @@
 #include "DxLib.h"
-#include "Vector2.h"
+#include "Vector3.h"
 
-int DrawCircle(Vector2 vec, int r, unsigned int color);
-
-
-
-
-// ウィンドウのタイトルに表示する文字列
-const char TITLE[] = "LC1B_00_テラオカヨシヒコ: タイトル";
-
-// ウィンドウ横幅
-const int WIN_WIDTH = 1024;
-
-// ウィンドウ縦幅
-const int WIN_HEIGHT = 576;
-
+int DrawSphere3D(const Vector3& CenterPos,const float r,const int DivNum,
+	             const unsigned int DifColor, const unsigned int SpcColor, const int FillFlag);
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine,
                    _In_ int nCmdShow) {
-	// ウィンドウモードに設定
-	ChangeWindowMode(TRUE);
 
+	const int WindowWidth = 1024;
+	const int WindowHeight = 576;
+	ChangeWindowMode(TRUE);
+	SetGraphMode(WindowWidth, WindowHeight, 32);
 	// ウィンドウサイズを手動では変更させず、
 	// かつウィンドウサイズに合わせて拡大できないようにする
 	SetWindowSizeChangeEnableFlag(FALSE, FALSE);
